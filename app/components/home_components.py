@@ -15,7 +15,7 @@ class HomeComponents:
 
     @staticmethod
     def main_page() -> None:
-        st.header(body="Threading Demo", divider="rainbow")
+        st.header(body="🍓 Threading Demo", divider="rainbow")
         worker = ThreadingWorkerSState.get()
 
         with st.container(border=True):
