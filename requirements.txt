@@ -1,0 +1,6 @@
+streamlit
+numpy
+matplotlib
+plotly
+python-dotenv
+opencv-python
