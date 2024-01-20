@@ -20,12 +20,12 @@ class HomeComponents:
 
         with st.container(border=True):
             button1, button2 = st.columns(2)
-            if button1.button(label="Start Worker", type="primary", use_container_width=True, disabled=worker is not None):
+            if button1.button(label="🚶Start Worker", type="primary", use_container_width=True, disabled=worker is not None):
                 worker = ThreadingWorkerEntity(daemon=True)
                 ThreadingWorkerSState.set(value=worker)
                 worker.start()
                 st.experimental_rerun()
-            if button2.button(label="Stop Worker", use_container_width=True, disabled=worker is None):
+            if button2.button(label="🧍Stop Worker", use_container_width=True, disabled=worker is None):
                 worker.should_stop.set()
                 worker.join()
                 ThreadingWorkerSState.set(value=None)
