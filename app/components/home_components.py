@@ -24,12 +24,12 @@ class HomeComponents:
                 worker = ThreadingWorkerEntity(daemon=True)
                 ThreadingWorkerSState.set(value=worker)
                 worker.start()
-                st.experimental_rerun()
+                st.rerun()
             if button2.button(label="🧍Stop Worker", use_container_width=True, disabled=worker is None):
                 worker.should_stop.set()
                 worker.join()
                 ThreadingWorkerSState.set(value=None)
-                st.experimental_rerun()
+                st.rerun()
         
             if worker is None:
                 st.markdown(body="No worker running.")
